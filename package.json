@@ -1,0 +1,9 @@
+{
+  "name": "cloudgaap-commons-openapi",
+  "version": "0.0.1",
+  "description": "Commons OpenAPI stuff used in all the CloudGaaP subprojects",
+  "main": "index.js",
+  "repository": "git@github.com:pagopa/cloudgaap-commons-openapi.git",
+  "author": "PagoPA S.p.A.",
+  "license": "MIT"
+}
