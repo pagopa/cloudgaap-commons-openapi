@@ -1,3 +1,3 @@
-# CloudGaaP Commons
+# CloudGaaP Commons OpenAPI
 
-Commons stuff used in all the CloudGaaP subprojects.
+Commons OpenAPI stuff used in all the CloudGaaP subprojects.
