@@ -1,0 +1,33 @@
+openapi: "3.0.2"
+info:
+  title: Dummy API
+  version: "1.0"
+  description: "Dummy API description"
+  license:
+    name: MIT
+    url: "https://dummyapi.example.com/LICENSE.md"
+servers:
+  - url: https://api.server.test/v1
+
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: "#/components/schemas/Error"
+
+paths:
+  /dummy:
+    get:
+      operationId: dummyOp
+      summary: "Dummy description"
+      responses:
+        "200":
+          description: "Ok"

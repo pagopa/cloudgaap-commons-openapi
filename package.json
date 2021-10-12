@@ -5,5 +5,11 @@
   "main": "index.js",
   "repository": "git@github.com:pagopa/cloudgaap-commons-openapi.git",
   "author": "PagoPA S.p.A.",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@redocly/openapi-cli": "^1.0.0-beta.62"
+  },
+  "scripts": {
+    "openapi:validate": "yarn openapi lint openapi/index.yaml"
+  }
 }
