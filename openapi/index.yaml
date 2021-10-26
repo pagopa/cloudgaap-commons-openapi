@@ -16,12 +16,28 @@ components:
       properties:
         code:
           type: integer
+          example: 404
         message:
           type: string
+          example: "Resource not found"
         errors:
           type: array
           items:
             $ref: "#/components/schemas/Error"
+
+  responses:
+    404NotFound:
+      description: The resource does not exist.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    5xxErrorResponse:
+      description: There were some error on the server side.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
 
 paths:
   /dummy:
