@@ -1,0 +1,22 @@
+# Do not trigger on push
+trigger: none
+pr: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- bash: |
+    FROM_SOURCE=$(cat .node-version || cat .nvmrc)
+    echo "##vso[task.setvariable variable=NODE_VERSION]$FROM_SOURCE"
+  displayName: Determine Node.js version from source
+- task: NodeTool@0
+  inputs:
+    versionSpec: $(NODE_VERSION)
+  displayName: Set up Node.js
+- script: |
+    yarn install --frozen-lockfile --no-progress --non-interactive --network-concurrency 1
+  displayName: Install node modules
+- script: |
+    yarn openapi:validate
+  displayName: Validate OpenAPI
