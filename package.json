@@ -10,6 +10,7 @@
     "@redocly/openapi-cli": "^1.0.0-beta.62"
   },
   "scripts": {
-    "openapi:validate": "yarn openapi lint openapi/index.yaml"
+    "openapi:validate": "yarn openapi lint openapi/index.yaml",
+    "release": "scripts/release.sh"
   }
 }
