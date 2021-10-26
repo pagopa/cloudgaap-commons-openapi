@@ -23,6 +23,20 @@ components:
           items:
             $ref: "#/components/schemas/Error"
 
+  responses:
+    404ErrorResponse:
+      description: The resource does not exist.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    5xxErrorResponse:
+      description: There were some error on the server side.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+
 paths:
   /dummy:
     get:
