@@ -13,13 +13,32 @@ components:
   schemas:
     Error:
       type: object
+      required:
+        - code
       properties:
         code:
+          description: >
+            A unique code that identifies the error.
+            To view the error details see the link https://dev.cloudgaap.io/api/error-codes
           type: integer
           example: 404
-        message:
+        description:
           type: string
-          example: "Resource not found"
+          description: >
+            A human readable explanation specific to this occurrence of the
+            problem that is helpful to locate the problem and give advice on how
+            to proceed. Written in English and readable for engineers, usually not
+            suited for non technical stakeholders and not localized.
+          example: Resource not found
+        details:
+          type: string
+          format: uri
+          description: >
+            An absolute URI that identifies the problem type. When dereferenced,
+            it SHOULD provide human-readable documentation for the problem type
+            (e.g., using HTML).
+          default: 'about:blank'
+          example: 'https://dev.cloudgaap.io/api/errors/constraint-violation'
         errors:
           type: array
           items:
