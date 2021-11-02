@@ -22,12 +22,23 @@ components:
           example: "Resource not found"
         errors:
           type: array
+          example: []
           items:
             $ref: "#/components/schemas/Error"
 
   responses:
+    400BadRequest:
+      description: >
+        The server cannot or will not process the request due to something that is perceived to be a client error
+        (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
     404NotFound:
-      description: The resource does not exist.
+      description: >
+        The origin server did not find a current representation for the target resource or is not willing to disclose
+        that one exists.
       content:
         application/json:
           schema:
