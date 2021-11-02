@@ -25,6 +25,11 @@ components:
           example: []
           items:
             $ref: "#/components/schemas/Error"
+    FiscalCodeType:
+      description: The citizen's fiscal code.
+      type: string
+      pattern: "^[A-Z]{6}[0-9LMNPQRSTUV]{2}[ABCDEHLMPRST][0-9LMNPQRSTUV]{2}[A-Z][0-9LMNPQRSTUV]{3}[A-Z]$"
+      example: "SPNDNL80R13C555X"
 
   responses:
     400BadRequest:
