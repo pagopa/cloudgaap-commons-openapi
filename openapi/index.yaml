@@ -43,6 +43,14 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+    409Conflict:
+      description: >
+        The request could not be completed due to a conflict with the current state of the target resource.
+        This code is used in situations where the user might be able to resolve the conflict and resubmit the request.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
     5xxErrorResponse:
       description: There were some error on the server side.
       content:
